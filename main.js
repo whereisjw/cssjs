@@ -8,9 +8,16 @@ const getGenreMovie = (장르번호) => {
     resolve(data);
   });
 };
-
+let arr = [];
 document.querySelectorAll(".test button").forEach((v, i) => {
   v.addEventListener("click", (e) => {
+    if (arr.includes(e.currentTarget.value)) {
+      let idx = arr.indexOf(e.currentTarget.value);
+    } else {
+      arr.push(e.currentTarget.value);
+    }
+
+    console.log(arr, arr.indexOf("35"));
     getGenreMovie(e.currentTarget.value);
   });
 });
